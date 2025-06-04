@@ -1,13 +1,17 @@
 import requests
+from dotenv import load_dotenv
+import os
 # import pprint
+
+load_dotenv()
 
 print("\n\tWelcome to Weather App!")
 input_city = input("Enter the city: ")
 CITY = input_city
-API_KEY = "9d590834f61771c577770c743016787d"
+API_KEY = os.getenv("API_KEY")
 URL = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 
-def main():
+def get_weather():
     re = requests.get(URL).json()
     # pprint.pprint(re)
     temp = re['main']['temp']
@@ -16,7 +20,6 @@ def main():
     feels_like = re['main']['feels_like']
     country = re['sys']['country']
     city = re['name']
-
 
     print(
         f"""
@@ -27,5 +30,13 @@ def main():
         """
     )
     
+    
+def main():
+    try:
+        get_weather()
+    except:
+        error = Exception(f"name '{CITY}' city not found!")
+        print(error)
+
 if __name__ == '__main__':
     main()
