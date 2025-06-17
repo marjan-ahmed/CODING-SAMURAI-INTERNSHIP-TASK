@@ -6,10 +6,10 @@ opr = input("Enter an operation to perform (+, -, x, /): ")
 
 match opr:
     case "+":
-        print(f"{num1}+{num2}: {num1 + num2}")
+        print(f"{num1} + {num2} = {num1 + num2}")
     case "-":
-        print(f"{num1}-{num2}: {num1 - num2}")
+        print(f"{num1} - {num2} = {num1 - num2}")
     case "x":
-        print(f"{num1}*{num2}: {num1 * num2}")
+        print(f"{num1} * {num2} = {num1 * num2}")
     case "/":
-        print(f"{num1}/{num2}: {num1 / num2}")
+        print(f"{num1} / {num2} = {num1 / num2}")
