@@ -5,9 +5,8 @@ import os
 
 load_dotenv()
 
-print("\n\tWelcome to Weather App!")
-input_city = input("Enter the city: ")
-CITY = input_city
+print("\n\tWelcome to Weather App! ⛅")
+CITY = input("Enter the city: ")
 API_KEY = os.getenv("API_KEY")
 URL = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
 
